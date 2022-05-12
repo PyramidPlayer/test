@@ -1,3 +1,5 @@
+# db2 ------------------------------------------------------
+
 create table teachers (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	name TEXT NOT NULL,
@@ -28,7 +30,7 @@ create table grades (
 	FOREIGN KEY (stream_id) REFERENCES streams(id)
 );
 
-#------------------------------------------------------
+# db3 ------------------------------------------------------
 
 alter table streams rename column starts_at to started_at;
 alter table streams add column finished_at TEXT;
@@ -55,4 +57,12 @@ insert into grades (teacher_id, stream_id, grade) values (2, 2, 4.9);
 insert into grades (teacher_id, stream_id, grade) values (1, 3, 4.8);
 insert into grades (teacher_id, stream_id, grade) values (1, 4, 4.9);
 
-# alter table grades change column stream_id REAL;
+# db4 ------------------------------------------------------
+
+update streams set started_at = substr(started_at, 7, 4) || '-' || substr(started_at, 4, 2) || '-' || substr(started_at, 1, 2);
+select id, number from streams order by started_at desc limit 1;
+select distinct substr(started_at, 1, 4) as year from streams;
+select count(*) as total_teachers from teachers;
+select started_at from streams order by started_at desc limit 2;
+select avg(grade) as avg_grade from grades where teacher_id = 1;
+select teacher_id from grades group by teacher_id having avg(grade) < 4.8;

@@ -1,0 +1,33 @@
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir students mentors
+student@Ubuntu-MySQL-VirtualBox:~$ touch students/students_list.txt
+student@Ubuntu-MySQL-VirtualBox:~$ touch mentors/mentors_list.txt
+
+student@Ubuntu-MySQL-VirtualBox:~$ vim students/students_list.txt
+student@Ubuntu-MySQL-VirtualBox:~$ vim mentors/mentors_list.txt
+
+student@Ubuntu-MySQL-VirtualBox:~$ mv mentors/mentors_list.txt students/
+student@Ubuntu-MySQL-VirtualBox:~$ ls students
+mentors_list.txt  students_list.txt
+
+student@Ubuntu-MySQL-VirtualBox:~$ rm -rf mentors/
+
+student@Ubuntu-MySQL-VirtualBox:~$ mv students/ students_and_mentors
+
+student@Ubuntu-MySQL-VirtualBox:~$ rm -rf students_and_mentors/
+
+nikolay.toroptsev@1f-ntoroptsev-msk  ~/Projects/tmp   linux2  ssh student@192.168.1.161
+The authenticity of host '192.168.1.161 (192.168.1.161)' can't be established.
+ECDSA key fingerprint is SHA256:7qWPIG+If3sr44sVZY7eK6L29Fe93eiVkSRpR+8tp+Y.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.1.161' (ECDSA) to the list of known hosts.
+student@192.168.1.161's password:
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.15.0-142-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+0 updates can be applied immediately.
+
+Last login: Mon Apr 22 18:52:20 2019 from 192.168.1.117
+student@Ubuntu-MySQL-VirtualBox:~$
